@@ -1,6 +1,8 @@
 import Dependencies._
 
 lazy val dependencies = Seq(
+  scalaLogging, logback,
+  slick, slickSLF4J, slickSLF4J,
   uTest % "test"
 )
 
