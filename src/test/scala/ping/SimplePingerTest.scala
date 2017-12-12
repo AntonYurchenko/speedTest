@@ -1,10 +1,10 @@
 package ping
 
-import com.typesafe.scalalogging.LazyLogging
 import utest._
+import com.typesafe.scalalogging.LazyLogging
 
 /**
-  * The class is test of SimplePinger
+  * This is test suite for [[SimplePinger]]
   * Host for testing is localhost
   */
 object SimplePingerTest extends TestSuite with LazyLogging {
@@ -18,7 +18,7 @@ object SimplePingerTest extends TestSuite with LazyLogging {
   debug(s"host: $GOOD_HOST")
   debug(s"bad host: $BAD_HOST")
 
-  def tests: Tests = Tests {
+  override def tests: Tests = Tests {
 
     'goodPing - {
       val pingTool = SimplePinger(GOOD_HOST)

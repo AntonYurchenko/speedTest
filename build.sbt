@@ -2,8 +2,8 @@ import Dependencies._
 
 lazy val dependencies = Seq(
   scalaLogging, logback,
-  slick, slickSLF4J, slickSLF4J,
-  uTest % "test"
+  slick, /*slickSLF4J,*/ slickHikaricp, mysql,
+  uTest % "test", h2Database % "test"
 )
 
 lazy val root = (project in file("."))
