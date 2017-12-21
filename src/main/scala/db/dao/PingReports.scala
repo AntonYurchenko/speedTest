@@ -13,11 +13,10 @@ import scala.concurrent.Future
   */
 class PingReports(implicit val context: DBContext) extends PingReportMapping with DAO {
 
-  import context._
-  import profile.api._
+  import context.profile.api._
 
   /**
-    * The method writes [[PingReport]] to database
+    * The method writes [[db.table.entity.PingReport]] to database
     *
     * @param item ping report
     * @return
@@ -29,7 +28,7 @@ class PingReports(implicit val context: DBContext) extends PingReportMapping wit
       table += item // add item to table
     ).transactionally
 
-    db.run(actions)
+    context.db.run(actions)
 
   }
 
@@ -46,14 +45,14 @@ class PingReports(implicit val context: DBContext) extends PingReportMapping wit
         if (!tableNames.contains(table.baseTableRow.tableName))
           table.schema.create
         else
-          DBIO.successful()
+          DBIO.successful(Unit)
     }
 
   /**
-    * The method returns sequence of all [[PingReport]] from database
+    * The method returns sequence of all [[db.table.entity.PingReport]] from database
     *
     * @return
     */
-  def read(): Future[Seq[PingReport]] = db.run(table.result)
+  def read(): Future[Seq[PingReport]] = context.db.run(table.result)
 
 }

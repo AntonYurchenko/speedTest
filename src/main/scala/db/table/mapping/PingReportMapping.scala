@@ -5,7 +5,7 @@ import db.dao._
 import db.table.entity.PingReport
 
 /**
-  * The trait contains class for mapping entity [[PingReport]] to table ping_report in database
+  * The trait contains class for mapping entity [[db.table.entity.PingReport]] to table ping_report in database
   */
 trait PingReportMapping {
   this: DAO =>

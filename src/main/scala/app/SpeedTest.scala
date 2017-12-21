@@ -127,7 +127,7 @@ object SpeedTest extends App with LazyLogging {
   def upStopHandler(finish: Promise[Unit]): Future[Unit] = Future {
     while (theApp.isRunnable)
       Thread.sleep(5000)
-    finish.success()
+    finish.success(Unit)
   }
 
 }
