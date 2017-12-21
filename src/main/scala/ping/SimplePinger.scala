@@ -81,6 +81,20 @@ class SimplePinger private(host: String, count: Int, timeOut: Int) extends Pinge
     * @return
     */
   override def allPing: Seq[Option[Int]] = pingTimes
+
+  /**
+    * The method prints ping statistic
+    *
+    * @return
+    */
+  override def toString: String =
+    s"""Ping to $host:
+       |Minimum time of ping: $minPing ms
+       |Average time of ping: $avgPing ms
+       |Maximum time of ping: $maxPing ms
+       |Sent packages: $count
+       |Received packages: $successPing
+       |Lost packages: $failedPing""".stripMargin
 }
 
 /**

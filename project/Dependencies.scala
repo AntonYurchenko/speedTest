@@ -5,6 +5,9 @@ import sbt._
   */
 object Dependencies {
 
+  // apache commons
+  lazy val commDaemon = "commons-daemon" % "commons-daemon" % "1.1.0"
+
   //logging
   lazy val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging" % "3.7.2"
   lazy val logback = "ch.qos.logback" % "logback-classic" % "1.2.3"

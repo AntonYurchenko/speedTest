@@ -46,4 +46,8 @@ object PingReportsTest extends TestSuite with LazyLogging {
     }
 
   }
+
+  override def utestAfterAll(): Unit = {
+    dbContext.db.close()
+  }
 }
