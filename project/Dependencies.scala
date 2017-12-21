@@ -15,7 +15,7 @@ object Dependencies {
   // slick framework for working to database
   lazy val slick = "com.typesafe.slick" %% "slick" % "3.2.1"
   lazy val slickSLF4J = "org.slf4j" % "slf4j-nop" % "1.6.4"
-  lazy val slickHikaricp =  "com.typesafe.slick" %% "slick-hikaricp" % "3.2.1"
+  lazy val slickHikaricp = "com.typesafe.slick" %% "slick-hikaricp" % "3.2.1"
 
   // database drivers
   lazy val mysql = "mysql" % "mysql-connector-java" % "5.1.45"
@@ -23,5 +23,9 @@ object Dependencies {
   // testing
   lazy val uTest = "com.lihaoyi" %% "utest" % "0.6.0"
   lazy val h2Database = "com.h2database" % "h2" % "1.4.196"
+
+  lazy val overrides = Seq(
+    "org.codehaus.plexus" % "plexus-utils" % "2.1"
+  )
 
 }
